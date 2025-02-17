@@ -1,0 +1,20 @@
+<form #userForm="ngForm"></form>
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <input class="input-box" type="text" name="username" [(ngModel)]="anytext" placeholder="Input any text" required>
+    <input class="input-box" type="email" name="email" [(ngModel)]="email" placeholder="Enter your email" required>
+    <input class="input-box" type="password" name="password" [(ngModel)]="password" placeholder="Enter your password" required>
+    <input class="input-box" type="number" name="age" [(ngModel)]="age" placeholder="Enter your age" required>
+    <input class="btn" type="submit" value="Submit" [disabled]="!anytext || !email || !password || !age">
+  </form>
+</div>
+
+<p *ngIf="submitted">
+  You have entered:<br>
+  Any text: {{anytext}}<br>
+  Email: {{email}}<br>
+  Password: {{password}}<br>
+  Age: {{age}}
+</p>
+
+<app-reactive-form></app-reactive-form>
