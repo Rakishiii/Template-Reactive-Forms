@@ -1,0 +1,11 @@
+<form #userForm="ngForm"></form>
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <input class="input-box" type="text" name="username" [(ngModel)]="anytext" placeholder="Input any text" required>
+    <input class="btn" type="submit" value="Submit" [disabled]="!anytext">
+  </form>
+</div>
+
+<p *ngIf="submitted">You have entered: {{anytext}}</p>
+
+<app-reactive-form> </app-reactive-form>
